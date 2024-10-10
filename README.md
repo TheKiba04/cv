@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# CV Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a personal CV website built using modern web technologies. It aims to showcase professional experience, skills, education, and tools in a sleek and responsive design. The website can be easily extended or customized and supports deployment via Firebase.
+
+## Technologies Used
+
+- **Vite**: Fast build tool and development server.
+- **TypeScript**: Type safety and modern JavaScript features.
+- **ESLint**: Linting for maintaining code quality.
+- **Firebase**: Hosting and deployment platform.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following commands:
 
-### `yarn start`
+- **`yarn go`**  
+  Starts the Vite development server. This will spin up the local development environment where you can preview changes live.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **`yarn build`**  
+  Compiles TypeScript into JavaScript and bundles the application for production. The final output will be optimized for deployment.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **`yarn lint`**  
+  Runs ESLint on all `.ts` and `.tsx` files to ensure code quality. It checks for code style errors and unused directives.
 
-### `yarn test`
+- **`yarn lint:fix`**  
+  Runs ESLint in "fix" mode, which automatically fixes linting errors when possible.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **`yarn preview`**  
+  Runs the production build in preview mode to check how the website will behave in a live environment before deployment.
 
-### `yarn build`
+- **`yarn deploy`**  
+  Builds the project and deploys the website to Firebase hosting.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The website is deployed using Firebase. After running the build, use the following command to deploy the site:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn deploy

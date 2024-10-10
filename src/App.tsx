@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import DataProvider from '@providers/DataProvider'
+import StyledEngineProvider from '@providers/StyledEngineProvider'
+import ThemeProvider from '@providers/ThemeProvider'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Overview from '@pages/Overview'
 
-export default App;
+import CssBaseline from '@elements/CssBaseline'
+
+import theme from '@styles/theme'
+
+const App = () => (
+	<StyledEngineProvider injectFirst>
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<DataProvider>
+				<Overview />
+			</DataProvider>
+		</ThemeProvider>
+	</StyledEngineProvider>
+)
+
+export default App
