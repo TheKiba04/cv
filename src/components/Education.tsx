@@ -13,37 +13,35 @@ interface EducationProps {
 	education: Institution[]
 }
 
-const Education = ({ education }: EducationProps) => {
-	return (
-		<InfoSection title={SECTION_TITLES.EDUCATION}>
-			<List>
-				{education.map(({ universityLogo, university, faculty, degree, years }) => (
-					<ListItem
-						divider
-						key={`${university}-${degree}-${years}`}
-						sx={{ display: 'flex', alignItems: 'flex-start' }}
-					>
-						<ListItemAvatar sx={{ display: 'flex', justifyContent: 'center' }}>
-							<Avatar src={universityLogo} sx={{ bgcolor: 'black', width: 60, height: 60 }} />
-						</ListItemAvatar>
-						<ListItemText sx={{ margin: 0, padding: '0 16px' }}>
-							<Typography variant='subtitle1' marginBottom='6px' lineHeight={1}>
-								{university}
+const Education = ({ education }: EducationProps) => (
+	<InfoSection title={SECTION_TITLES.EDUCATION}>
+		<List>
+			{education.map(({ universityLogo, university, faculty, degree, years }) => (
+				<ListItem
+					divider
+					key={`${university}-${degree}-${years}`}
+					sx={{ display: 'flex', alignItems: 'flex-start' }}
+				>
+					<ListItemAvatar sx={{ display: 'flex', justifyContent: 'center' }}>
+						<Avatar src={universityLogo} sx={{ bgcolor: 'black', width: 60, height: 60 }} />
+					</ListItemAvatar>
+					<ListItemText sx={{ margin: 0, padding: '0 16px' }}>
+						<Typography variant='subtitle1' marginBottom='6px' lineHeight={1}>
+							{university}
+						</Typography>
+						<Typography variant='subtitle2'>{faculty}</Typography>
+						<Typography variant='caption'>
+							<Typography component='span' color='secondary.contrastText'>
+								{degree}
 							</Typography>
-							<Typography variant='subtitle2'>{faculty}</Typography>
-							<Typography variant='caption'>
-								<Typography component='span' color='secondary.contrastText'>
-									{degree}
-								</Typography>
 								&#8226;
-								{years}
-							</Typography>
-						</ListItemText>
-					</ListItem>
-				))}
-			</List>
-		</InfoSection>
-	)
-}
+							{years}
+						</Typography>
+					</ListItemText>
+				</ListItem>
+			))}
+		</List>
+	</InfoSection>
+)
 
 export default Education

@@ -7,22 +7,20 @@ interface FooterProps {
 	location: string
 }
 
-const Footer = ({ name, surname, location }: FooterProps) => {
-	return (
-		<Box
-			sx={{
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-				padding: '16px',
-				bgcolor: 'action.disabledBackground',
-			}}
-		>
-			<Typography variant='caption' color='secondary.contrastText'>
+const Footer = ({ name, surname, location }: FooterProps) => (
+	<Box
+		sx={{
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			padding: '16px',
+			bgcolor: 'action.disabledBackground',
+		}}
+	>
+		<Typography variant='caption' color='secondary.contrastText'>
 				&#169; {name} {surname} &#8226; {location}
-			</Typography>
-		</Box>
-	)
-}
+		</Typography>
+	</Box>
+)
 
 export default Footer

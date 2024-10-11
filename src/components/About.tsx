@@ -7,14 +7,12 @@ interface AboutProps {
 	about: string
 }
 
-const About = ({ about }: AboutProps) => {
-	return (
-		<InfoSection title={SECTION_TITLES.ABOUT} rightSide>
-			<Typography variant='body1' whiteSpace='pre-line'>
-				{about}
-			</Typography>
-		</InfoSection>
-	)
-}
+const About = ({ about }: AboutProps) => (
+	<InfoSection title={SECTION_TITLES.ABOUT} rightSide>
+		<Typography variant='body1' whiteSpace='pre-line'>
+			{about}
+		</Typography>
+	</InfoSection>
+)
 
 export default About
