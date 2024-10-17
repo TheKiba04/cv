@@ -2,7 +2,7 @@ import { getDownloadURL, ref } from 'firebase/storage'
 
 import UserData from '@type/UserData'
 
-import { storage } from '@configs/firebase'
+import { storage, analytics, logEvent } from '@configs/firebase'
 
 const env = import.meta.env
 
@@ -26,4 +26,10 @@ export const getUserData = async (): Promise<UserData | undefined> => {
 	} catch (error) {
 		return undefined
 	}
+}
+
+export const logButtonClick = (buttonText: string) => {
+	logEvent(analytics, 'button_click', {
+		button_text: buttonText,
+	})
 }
