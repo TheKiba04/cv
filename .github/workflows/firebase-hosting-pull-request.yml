@@ -8,6 +8,7 @@ permissions:
   contents: read
   pull-requests: write
 env:
+  VITE_STORAGE_BUCKET: '${{ secrets.VITE_STORAGE_BUCKET }}'
   VITE_PROJECT_ID: '${{ secrets.VITE_PROJECT_ID }}'
   VITE_USER_DATA_FILE_NAME: '${{ secrets.VITE_USER_DATA_FILE_NAME }}'
   VITE_USER_AVATAR_FILE_NAME: '${{ secrets.VITE_USER_AVATAR_FILE_NAME }}'
