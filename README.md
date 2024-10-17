@@ -37,3 +37,59 @@ The website is deployed using Firebase. After running the build, use the followi
 
 ```bash
 yarn deploy
+
+----------------------
+
+If you receive CORS error you need to update Firebase Storage CORS settings.
+To update your Firebase Storage CORS settings, you'll need to create or modify the `cors.json` file and then apply it using the Firebase CLI. Here's a quick reminder of the steps:
+
+### Steps to Update CORS Settings
+
+1. **Create a `cors.json` File**  
+   This file defines the CORS (Cross-Origin Resource Sharing) rules for your Firebase Storage bucket. Here's an example of what a `cors.json` file might look like:
+
+   ```json
+   [
+     {
+       "origin": ["*"], // Replace "*" with specific origins if needed
+       "method": ["GET", "POST", "PUT", "DELETE"],
+       "maxAgeSeconds": 3600,
+       "responseHeader": ["Content-Type"]
+     }
+   ]
+   ```
+
+   - **`origin`**: Specifies the domains allowed to access your resources. Use `"*"` for any domain, or specify particular domains like `["https://example.com"]`.
+   - **`method`**: Defines the HTTP methods that can be used (GET, POST, etc.).
+   - **`maxAgeSeconds`**: The duration (in seconds) for which the browser can cache the CORS response.
+   - **`responseHeader`**: Specifies which headers can be exposed to the client.
+
+2. **Apply the CORS Configuration**  
+   Once your `cors.json` file is ready, you'll need to apply it to your Firebase Storage bucket using the Firebase CLI.
+
+   - Open your terminal and navigate to the folder containing the `cors.json` file.
+   - Run the following command to apply the CORS settings to your Firebase Storage bucket:
+
+   ```bash
+   gsutil cors set cors.json gs://your-bucket-name
+   ```
+
+   Replace `your-bucket-name` with the actual name of your Firebase Storage bucket. For example, if your bucket is named `example.com`, you would run:
+
+   ```bash
+   gsutil cors set cors.json gs://example.com
+   ```
+
+3. **Verify the CORS Configuration**  
+   To check that your CORS settings have been successfully applied, you can run:
+
+   ```bash
+   gsutil cors get gs://your-bucket-name
+   ```
+
+   This will display the current CORS settings for your bucket.
+
+### Recap:
+1. Create or update the `cors.json` file with your desired settings.
+2. Run `gsutil cors set cors.json gs://your-bucket-name` to apply the configuration.
+3. Verify the configuration with `gsutil cors get`.
