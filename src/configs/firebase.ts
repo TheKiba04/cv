@@ -1,5 +1,5 @@
-import { initializeApp } from 'firebase/app'
 import { getAnalytics, logEvent } from 'firebase/analytics'
+import { initializeApp } from 'firebase/app'
 import { getStorage } from 'firebase/storage'
 
 const env = import.meta.env
@@ -17,11 +17,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 
 const analytics = getAnalytics(app)
+
 const storage = getStorage(app)
 
 logEvent(analytics, 'page_view', {
-	page_path: window.location.pathname,
-	page_title: document.title,
+	'page_path': window.location.pathname,
+	'page_title': document.title,
 })
 
 export { storage, analytics, logEvent }

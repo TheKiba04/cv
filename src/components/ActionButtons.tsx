@@ -1,8 +1,8 @@
 import { ACTION_BUTTONS, LOCAL_ICONS_PATH } from '@constants'
 
 import Button from '@elements/Button'
-import { logButtonClick } from '@helpers/firebase.helper'
 
+import { logButtonClick } from '@helpers/firebase.helper'
 import getIconPath from '@helpers/getIconPath'
 
 interface ActionButtonsProps {
